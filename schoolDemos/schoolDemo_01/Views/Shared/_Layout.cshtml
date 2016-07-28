@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>@ViewBag.Title - Philippine Emerates Private School</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/style.min.css" rel="stylesheet" />
+    <link href="~/Content/style-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/customized.css" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<div class="branding" style="width:71px;height:31px;margin-top:9px; "></div>*@
+
+                <img src="~/Content/Images/logo.png" style="float:left;margin-right:10px;" />
+                @Html.ActionLink("Philippine Emirates Private School", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="navbar-user">
+                        @*<li>@Html.ActionLink("About Us", "About", "Home")</li>*@
+                        <a href="javascript:;" data-click="scroll-to-target" data-toggle="dropdown">About Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-left animated fadeInDown">
+                            @*<li>@Html.ActionLink("Our History", "About", "Home")</li>*@
+                            <li><a href="#history" data-click="scroll-to-target">Our History</a></li>
+                            <li><a href="index_inverse_header.html">Founders and Leaders</a></li>
+                            <li><a href="index_default_header.html">Board of Governors</a></li>
+                            <li><a href="extra_element.html">External Evaluation</a></li>
+                            <li><a href="extra_element.html">Student Achievement</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-user">
+                        @*<li>@Html.ActionLink("About Us", "About", "Home")</li>*@
+                        <a href="javascript:;" data-click="scroll-to-target" data-toggle="dropdown">Contact Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-left animated fadeInDown">
+                            @*<li>@Html.ActionLink("Contact Information", "Contact", "Home", routeValues: null, htmlAttributes: new { toggle = "dropdown", @class = "dropdown-toggle f-s-14" })</li>*@
+
+                            <li><a href="#contact" data-click="scroll-to-target">Contact Information</a></li>
+                            <li><a href="index_inverse_header.html">Direction to our Campus</a></li>
+                            <li><a href="index_default_header.html">Careers</a></li>
+                        </ul>
+                    </li>
+                    @*<li>@Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { toggle = "dropdown", @class = "dropdown-toggle f-s-14" })</li>*@
+                    <li class="divider"></li>
+
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Philippine Emirates Private School</p>
+        </footer>
+    </div>
+
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top cd-top icon" data-toggle="tooltip" title="Back to Top" data-placement="left">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/clickUp.js"></script>
+    <script src="~/Scripts/scrollMonitor.js"></script>
+
+
+</body>
+</html>
